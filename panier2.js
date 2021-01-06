@@ -62,12 +62,13 @@ var loadEvent = function(){
 	} else{
 	alert('Formulaire envoyé !');
 	}
+
+	window.location = "Commande_validee.html"
 })
 }
 
 
 //Additionner prix total
-
 const paiement = document.getElementById('paiement');
 	paiement.innerHTML+= `
 	<div> <h2>TOTAL</h2></div>
@@ -86,6 +87,7 @@ var allId = panier.map((produit)=>{
 })
 
 console.log(allId)
+
 
 var dataToSend = { contact: {firstName: "Olivier", 
 							lastName: "Malahel",

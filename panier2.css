@@ -164,8 +164,13 @@ body{
 	border-bottom: 1px solid grey;
 }
 
-form {
+#inscription {
 	margin-left: 20px;
+}
+
+#inscription input{
+	margin-bottom: 5px;
+	border-radius: 3px;
 }
 
 button {
