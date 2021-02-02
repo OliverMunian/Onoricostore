@@ -1,6 +1,5 @@
 /*Formulaire*/
 var formulaire = document.getElementById('inscription')
-console.log(formulaire)
 
 formulaire.addEventListener("submit", function(e) {
 

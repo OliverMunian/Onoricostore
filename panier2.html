@@ -35,9 +35,10 @@
       <div id="firstbox">
         <div class="box"> <h2>Mon panier </h2> </div> 
       </div> <!-- fermeture firstbox  -->
-      <form>
-        <input type="button" onClick="document.location.href='formulaire.html'" value= "Suivant" id="button">
-  </form>
+      <form id="soumettre" method="POST" action="formulaire.html">
+        <input type="submit" value= "Suivant" id="button">
+        <p id="erreur" style="color: red;"></p>
+      </form>
   </div> <!-- fermeture background  -->
 
 </body>

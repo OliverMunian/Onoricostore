@@ -2,11 +2,19 @@ var searchParams = new URLSearchParams(window.location.search);
 
 var id= searchParams.get("id") 
 console.log(id)
+	
 
+	let formulaire = document.getElementById('soumettre')
+	let erreur = document.getElementById('erreur')
 	let panier = localStorage.getItem('panier')
-		if(panier === null){
+			if(panier === null){
 			panier = [];
+			erreur.innerHTML = "Votre panier est vide"
 		}
+	
+		/*if(panier === null){
+			panier = [];
+		}*/
 		//Ajouter un article
 		else{
 			panier = JSON.parse(panier);
@@ -21,7 +29,6 @@ console.log(id)
 				</div>`;
 			}
 		}
-
 
 
 //Retirer un article
@@ -50,8 +57,9 @@ for (var i= 0; i < panier.length; i++){
 	prix += panier[i].price;
 	var reverse = array.reverse();
 	array.push(prix)
+	console.log(array)
 	var reverse = array.reverse();
-	console.log(reverse)
+	localStorage.setItem('price', reverse[0])
 }
 
 
