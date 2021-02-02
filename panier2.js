@@ -30,7 +30,7 @@ var remove = function(index){
 	console.log(panier)
 	articleSupp.innerHTML= "";
 	for(var i = 0; i < panier.length; i++){
-			articleSupp.innerHTML +=` <div class="box_1"><img src="${panier[i].image}">
+			articleSupp.innerHTML +=`<div class="box_1"><img src="${panier[i].image}">
             	<div class="box_2"> <p class="price_name">${panier[i].price}€- ${panier[i].name}</p> </br>
              	<p>Ouverture objectif - "${panier[i].lense}"</p> </br>
 				</div>
@@ -42,40 +42,18 @@ var remove = function(index){
 }
 
 
-/*Formulaire*/
-var loadEvent = function(){
-	document.forms['inscription'].addEventListener("submit", (e)=> {
-	
-	var erreur= document.getElementById("erreur");
-	console.log(erreur)
-	var inputs = document.getElementsByTagName("input");
-
-	for(var i = 0; i < inputs.length; i++ ){
-		if(!inputs[i].value){
-			erreur.innerHTML= "Veuillez compléter tous les champs";
-		}
-	}
-	if(erreur){
-		e.preventDefault();
-		document.getElementById("erreur").innerHTML = erreur;
-		return false;
-	} else{
-	alert('Formulaire envoyé !');
-	}
-
-	window.location = "Commande_validee.html"
-})
-}
-
 
 //Additionner prix total
-const paiement = document.getElementById('paiement');
-	paiement.innerHTML+= `
-	<div> <h2>TOTAL</h2></div>
-	<div> <p>Sous total € </br>
-	</br>
-	Livraison </p> </div>
-	<button type="button"> Valider </button>`;
+var prix = 0;
+var array =[];
+for (var i= 0; i < panier.length; i++){
+	prix += panier[i].price;
+	var reverse = array.reverse();
+	array.push(prix)
+	var reverse = array.reverse();
+	console.log(reverse)
+}
+
 
 var caract = document.getElementById('caract');
 var caracte = document.getElementById('caracte');
@@ -104,7 +82,7 @@ fetch('http://localhost:3000/api/cameras/order', {
     body: JSON.stringify(dataToSend)})
     .then(response => response.json())
 	.then(response =>{
-	console.log(response)})
+	localStorage.setItem('numero_commande',response.orderId)})
 	.catch(error => console.log(error));
 
 

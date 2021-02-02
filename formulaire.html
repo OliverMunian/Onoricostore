@@ -1,13 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <link rel="stylesheet" type="text/css" href="/Users/oliviermalahel/Documents/Documents/Open_classrooms/Projet_n°5/JWDP5-master/panier2.css">
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/74ab983aa4.js" crossorigin="anonymous"></script>
 <head>
   <meta charset="utf-8">
-  <title> Orinoco -Panier </title>
+  <title> Entrez vos coordonées </title>
   </head>
-
 <body>
 
  <header>
@@ -32,15 +31,17 @@
   </header>
 
   <div id="background">
-      <div id="firstbox">
-        <div class="box"> <h2>Mon panier </h2> </div> 
-      </div> <!-- fermeture firstbox  -->
-      <form>
-        <input type="button" onClick="document.location.href='formulaire.html'" value= "Suivant" id="button">
-  </form>
-  </div> <!-- fermeture background  -->
+    <form id="inscription" action="Commande_validee.html" method="POST">
+            <h2> Veuillez renseigner vos coordonnées</h2>
+            <input type="text" name="prenom" placeholder="Prenom" id="prenom"><br/>
+            <input type="email" name="email" placeholder="Email" id="email"><br/>
+            <input type="email" name="email-confirmation" placeholder="Confirmation de l'email" id="email2"><br/>
+            <input type="submit" value="Suivant" id="Confirmation">
+            <p id="erreur"></p>
+    </form>
+  </div>
 
+<footer></footer>
 </body>
 
-  <script type="text/javascript" src="panier2.js"></script>
-  <!-- <script type="text/javascript" src="Validation.js"></script> -->
+ <script type="text/javascript" src="formulaire.js"></script>
